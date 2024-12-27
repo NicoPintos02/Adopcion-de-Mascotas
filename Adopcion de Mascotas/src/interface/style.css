@@ -1,0 +1,412 @@
+body {
+    font-family: 'Century Gothic', sans-serif;
+}
+
+
+ /* SECCION DE BARNAV */
+ header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transition: 0.7s;
+    padding: 30px 20px;
+    z-index: 10;
+}
+header.abajo{
+    background: #f9f9f9;
+    padding: 30px 20px;
+}
+header .logo{
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+    font-size: 2em;
+    letter-spacing: 2px;
+    transition: 1.5s;
+    text-decoration: none;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    list-style: none;
+}
+
+header ul li a{
+    position: relative;
+    font-family: helvetica;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: 0.7s;
+}
+header.abajo .logo,
+header.abajo ul li a{
+    color: #000;
+}
+
+/* SECCION DE INDEX */
+.container-main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../interface/Imagenes/Pagina\ Principal.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-end; /* Mueve el contenido al borde derecho */
+    align-items: center;
+    color: white;
+}
+.container-mision-vision {
+    padding: 5em;
+}
+.mision-vision-section {
+    margin-top: 10px;
+}
+.text-justify {
+    text-align: justify;
+}
+.Imagen_Fondo {
+    background-image: url(../interface/Imagenes/Banner1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 25em;
+}
+.container-banner{
+    text-align: center;
+    padding-top: 10em;
+}
+.overlay {
+    position: relative; /* Ajuste relativo a container-main */
+    margin-right: 50px; /* Ajusta este valor según la necesidad */
+}
+p {
+    color: rgb(3, 3, 3);
+}
+h1 {
+    color: rgb(2, 2, 2);
+}
+h3 {
+    color:#090909;
+    font-size: 70px;
+}
+
+.btn {
+    color: white;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+.glass{
+    position: absolute;
+    width: 600px;
+    height: 800px;
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, .5);
+    border-radius: 0px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-right: 2px solid rgba(255, 255, 255, .5);
+    border-bottom: 2px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(5px);
+} 
+
+/* SECCION DE ADOPTAR */
+.container-adopt {
+position: relative;
+width: 100%;
+height: 675px;
+background-image: url('.');
+background-size: cover;
+background-position: center;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+color: rgb(3, 3, 3);
+}
+
+.card {
+width: 100%;
+display: flex;
+max-width: 200px;
+width: 100%;
+height: 550px;
+margin: 1px;
+border-radius: 6px;
+overflow: hidden;
+background: white;
+box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+cursor: default;
+transition: all 400ms ease;
+}
+.card:hover {
+box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+transform: translateY(-3%);
+}
+.card img {
+width: 100%;
+height: 250px;
+}
+
+.card-body {
+padding: 10px; /* Adjust the padding if needed */
+}
+
+.card-title {
+margin-bottom: 10px; /* Keep a decent margin below the title */
+}
+
+.card-text {
+margin-bottom: 5px; /* Reduce the margin between text elements */
+}
+
+.form-control {
+border-radius: 4px;
+background-color: rgba(255, 255, 255, .5);
+box-shadow: inset -1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.filter-group {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+justify-content: space-between;
+margin-bottom: 20px; /* Reduce the space between filters and the pet list */
+}
+
+.filter-group .form-group {
+flex: 1;
+min-width: 120px;
+display: flex;
+flex-direction: column;
+}
+
+.filter-group .form-group label {
+margin-bottom: 5px;
+}
+
+.filter-group .form-group:last-child {
+align-self: flex-end;  /* Adjust the button to the right */
+}
+
+@media (max-width: 768px) {
+.filter-group {
+flex-direction: column;
+}
+.filter-group .form-group {
+min-width: 100%;
+}
+.filter-group .form-group:last-child {
+align-self: stretch;  /* Button to full width */
+}
+}
+
+.btn-custom {
+height: 40px;  /* Adjust this value according to your needs */
+padding: 0 20px;  /* Adjust the horizontal padding */
+font-size: 16px;  /* Adjust the font size if necessary */
+background-color: #007bff;  /* Background color */
+border: none;  /* No border */
+border-radius: 5px;  /* Rounded border */
+color: white;  /* Text color */
+cursor: pointer;  /* Change the cursor on hover */
+margin-left: 5px;  /* Add a small left margin to separate buttons */
+}
+.btn-secondary {
+background-color: #6c757d;
+}
+
+/* SECCION DE SUBIR FICHA */
+.modal-body {
+    align-items: center;
+    background: rgb(244, 241, 241);
+    justify-content: center;
+    display: grid;    
+    min-height: 100vh;
+}
+
+.adoptionForm {
+    position: relative;
+    width: 400px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 50px 40px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+.form-group_ficha {
+    position: relative;
+    margin-bottom: 2.0rem;
+}
+.form-group_ficha input,
+.form-group_ficha select,
+.form-group_ficha textarea {
+    padding: 0px 5px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    transition: border-bottom-color 0.3s ease;
+}
+.form-group_ficha input:focus,
+.form-group_ficha select:focus,
+.form-group_ficha textarea:focus {
+    outline: none;
+    border-bottom-color: #0c0c0c;
+}
+.form-group_ficha label {
+    color: #090909;
+    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+.form-group_ficha input:focus + label,
+.form-group_ficha input:not(:placeholder-shown) + label,
+.form-group_ficha select:focus + label,
+.form-group_ficha select:not([value=""]) + label,
+.form-group_ficha textarea:focus + label,
+.form-group_ficha textarea:not(:placeholder-shown) + label {
+    color: #048eff;
+}
+
+/* SECCION BANNER CON BOTONES  */
+.Imagen_Fondo2 {
+    background-image: url(../interface/Imagenes/Banner2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 30em;
+}
+.container-banner2{
+    text-align: center;
+    padding-top: 12em;
+}
+h6 {
+    color: rgb(7, 7, 7);
+    font-size: 20px;
+}
+
+/* SECCION DE RESERVAR HORA */
+.modal-body {
+    align-items: center;
+    background: rgb(244, 241, 241);    
+    min-height: 100vh;
+}
+
+/* SECCION DE CONTACTO */
+.contact-container {
+margin: 50px auto;
+padding: 20px;
+max-width: 1200px; /* Ajustado para mayor ancho */
+background-color: #ffffff;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-title {
+text-align: center;
+margin-bottom: 30px;
+}
+
+.contact-content {
+display: flex;
+justify-content: space-between; /* Espacio entre los elementos */
+}
+
+.contact-info {
+flex: 1;
+margin-right: 20px; /* Espacio a la derecha de la información de contacto */
+}
+
+.map-container {
+flex: 1;
+text-align: right;
+}
+
+.btn-copy {
+margin-left: 10px;
+}
+
+/* SECCION DE FOOTER */
+/* CSS */
+footer {
+    background-color: #060606;
+    color: rgb(5, 5, 5);
+    padding: 25px 0;
+    text-align: center;
+    position: relative;
+    width: 90%;
+    max-width: 1450px;
+    height: auto;
+    background: rgb(2, 2, 2);
+    box-shadow: 10px 45px 80px rgba(0, 0, 0, .5);
+    border-radius: 2px;
+    border: 2px solid rgb(7, 7, 7);
+    border-right: 2px solid rgba(5, 5, 5, 0.99);
+    border-bottom: 2px solid rgb(13, 13, 13);
+    backdrop-filter: blur(5px);
+    margin: 0 auto;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: rgb(251, 250, 250);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    filter: invert(100%);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .footer-title {
+        font-size: 1.5em;
+    }
+
+    .social-icons a img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-title {
+        font-size: 1.2em;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .social-icons a img {
+        width: 20px;
+        height: 20px;
+    }
+}

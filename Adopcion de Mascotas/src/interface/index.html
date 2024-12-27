@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMIGO FIEL - Adopción de Mascotas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Hebrew:wght@400;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light p-md-6">
+            <div class="container">
+                <a href="#" class="navbar-brand">AMIGO FIEL</a>
+                <button type="button" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toogle Navbar"> 
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="mx-auto"></div>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#mision-vision">Misión y Visión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#adoptar">Adoptar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#poner-en-adopcion">Poner en Adopción</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#reservar-hora">Reservar Hora</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="inicio" class="container-main">
+        <div class="glass"></div>
+        <div class="overlay text-right">
+            <h1 class="display-4">¡BIENVENIDOS!</h1>
+            <p class="lead">Adopta una mascota y descubre la alegría de </p>
+            <p class="lead">darle una segunda oportunidad en la vida.</p>
+            <div class="mt-4">
+                <a href="#adoptar" class="btn btn-dark btn-lg float-right ml-2">Adoptar</a>
+                <a href="#poner-en-adopcion" class="btn btn-dark btn-lg float-right">Poner en Adopción</a>
+            </div>
+        </div>
+    </div>
+    <!-- Misión y Visión Section -->
+    <div id="mision-vision" class="container-mision-vision">
+        <div class="text-center">
+            <h1 class="display-4">MISIÓN Y VISIÓN</h1>
+        </div>
+        <div class="row text-center justify-content-center m-3">
+            <div class="col-md-5 mision-vision-section">
+                <h2 class="h4">MISIÓN</h2>
+                <p class="lead text">Nuestra misión en AmigoFiel es conectar a personas y mascotas, creando un puente que facilita la adopción responsable. Nos dedicamos a proporcionar una plataforma segura y accesible donde los usuarios puedan encontrar y ofrecer un hogar lleno de amor para animales necesitados. Trabajamos incansablemente para garantizar que cada mascota encuentre una familia que la cuide y la quiera, promoviendo el bienestar animal y la tenencia responsable.</p>
+            </div>
+            
+            <div class="col-md-5 mision-vision-section">
+                <h2 class="h4">VISIÓN</h2>
+                <p class="lead text">Nuestra visión es ser la referencia líder en adopción de mascotas en línea, transformando la manera en que las personas encuentran y adoptan animales. Aspiramos a un mundo donde cada mascota tenga un hogar amoroso y cada persona pueda experimentar la alegría y el compañerismo de tener un amigo fiel. A través de innovación y compromiso con la comunidad, buscamos reducir el abandono animal y fomentar una cultura de respeto y amor por todos los seres vivos.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Imagen Fija Section -->
+    <div class="Imagen_Fondo">
+        <div class="container-banner">
+            <h3>ELIGE A TU SIGUIENTE COMPAÑERO</h3>
+        </div>
+    </div>
+    <!-- Adoptar Section -->
+    <div id="adoptar" class="container-adopt">
+        <main class="container mt-0">
+            <h4>FILTROS DE BUSQUEDA</h4>
+            <form id="filterForm" class="filter-group">
+                <div class="form-group">
+                    <label for="filterName">Nombre</label>
+                    <input type="text" class="form-control" id="filterName">
+                </div>
+                <div class="form-group">
+                    <label for="filterAge">Edad</label>
+                    <input type="number" class="form-control" id="filterAge">
+                </div>
+                <div class="form-group">
+                    <label for="filterSize">Tamaño</label>
+                    <select id="filterSize" class="form-control">
+                        <option value="">Cualquiera</option>
+                        <option value="Pequeño">Pequeño</option>
+                        <option value="Mediano">Mediano</option>
+                        <option value="Grande">Grande</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filterGender">Sexo</label>
+                    <select id="filterGender" class="form-control">
+                        <option value="">Cualquiera</option>
+                        <option value="Macho">Macho</option>
+                        <option value="Hembra">Hembra</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filterBreed">Raza</label>
+                    <input type="text" class="form-control" id="filterBreed">
+                </div>
+                <div class="form-group">
+                    <div>
+                        <button type="button" id="applyFiltersButton" class="btn btn-dark">
+                            Aplicar Filtros
+                        </button>
+                        <button type="button" id="clearFiltersButton" class="btn btn-secondary btn-custom">
+                            Eliminar Filtros
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <h4 class="mt-4">LISTA DE MASCOTAS</h4>
+            <div class="row" id="petList">
+                <!-- Más mascotas pueden ser agregadas aquí -->
+            </div>
+        </main>
+    </div>
+    <div class="modal fade" id="adoptModal" tabindex="-1" aria-labelledby="adoptModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adoptModalLabel">Petición de Mascota</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="adoptForm">
+                        <div class="form-group">
+                            <label for="userName" id="userNameLabel">Nombre</label>
+                            <input type="text" class="form-control" id="userName" name="userName" required aria-labelledby="userNameLabel">
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail" id="userEmailLabel">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="userEmail" name="userEmail" required aria-labelledby="userEmailLabel">
+                        </div>
+                        <div class="form-group">
+                            <label for="userMessage" id="userMessageLabel">Mensaje</label>
+                            <textarea class="form-control" id="userMessage" name="userMessage" rows="3" required aria-labelledby="userMessageLabel"></textarea>
+                        </div>
+                        <input type="hidden" id="selectedPetId" name="selectedPetId">
+                        <button type="submit" class="btn btn-dark">Enviar Petición</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Imagen Fija Section -->
+    <div id="reservar-hora" class="Imagen_Fondo2">
+        <div id="poner-en-adopcion" class="container-banner2">
+            <h6>¿Quieres poner a tu mascota en adopción? No te preocupes, puedes hacerlo!</h6>
+            <h6>¿Buscas reservar hora para una visita? No te preocupes, también puedes hacerlo!</h6>
+            <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#adoptionModal">Poner en Adopción</button>
+            <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#visitModal">Reservar Hora</button>
+        </div>
+    </div>
+    <!-- Modal para Poner en Adopción -->
+    <div class="modal fade" id="adoptionModal" tabindex="-1" role="dialog" aria-labelledby="adoptionModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adoptionModalLabel">Ficha de Adopción</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="adoptionForm" class="mt-4">
+                        <div class="form-row">
+                            <div class="form-group_ficha col-md-6">
+                                <label for="petName">Nombre*</label>
+                                <input type="text" class="form-control" id="petName" required>
+                            </div>
+                            <div class="form-group_ficha col-md-6">
+                                <label for="petType">Tipo*</label>
+                                <select id="petType" class="form-control" required>
+                                    <option value="Perro">Perro</option>
+                                    <option value="Gato">Gato</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group_ficha col-md-6">
+                                <label for="petAge">Edad*</label>
+                                <input type="number" class="form-control" id="petAge" required>
+                            </div>
+                            <div class="form-group_ficha col-md-6">
+                                <label for="petBreed">Raza*</label>
+                                <input type="text" class="form-control" id="petBreed" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="petColor">Color*</label>
+                                <input type="text" class="form-control" id="petColor" required>
+                            </div>
+                            <div class="form-group_ficha col-md-6">
+                                <label for="petSize">Tamaño*</label>
+                                <select id="petSize" class="form-control" required>
+                                    <option value="Pequeño">Pequeño</option>
+                                    <option value="Mediano">Mediano</option>
+                                    <option value="Grande">Grande</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group_ficha col-md-6">
+                                <label>Sexo*
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="petGender" id="male" value="Macho" required>
+                                        <label class="form-check-label" for="male">Macho</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="petGender" id="female" value="Hembra" required>
+                                        <label class="form-check-label" for="female">Hembra</label>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="form-group_ficha col-md-6">
+                                <label>Características
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="vaccinated" value="Vacunas al Día">
+                                        <label class="form-check-label" for="vaccinated">Vacunas al Día</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="neutered" value="Castrado">
+                                        <label class="form-check-label" for="neutered">Castrado</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="trained" value="Entrenado">
+                                        <label class="form-check-label" for="trained">Entrenado</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="friendly" value="Amigable con niños">
+                                        <label class="form-check-label" for="friendly">Amigable con niños</label>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group_ficha">
+                            <label for="petDescription">Descripción</label>
+                            <textarea class="form-control" id="petDescription" rows="3"></textarea>
+                        </div>
+                        <div class="form-group_ficha">
+                            <label for="petImage">Foto</label>
+                            <input type="file" class="form-control-file" id="petImage" accept="image/*">
+                        </div>
+                        <button type="submit" class="btn btn-dark">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal para Reservar Hora -->
+    <div class="modal fade" id="visitModal" tabindex="-1" role="dialog" aria-labelledby="visitModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="visitModalLabel">Reservar Hora</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="visitForm" class="mt-4">
+                        <div class="form-group_ficha">
+                            <label for="userName">Nombre</label>
+                            <input type="text" class="form-control" id="userName" required>
+                        </div>
+                        <div class="form-group_ficha">
+                            <label for="userEmail">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="userEmail" required>
+                        </div>
+                        <div class="form-group_ficha">
+                            <label for="userMessage">Mensaje</label>
+                            <textarea class="form-control" id="userMessage" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group_ficha">
+                            <label for="petSelect">Mascota a visitar</label>
+                            <input type="text" class="form-control" id="petSelect" required>
+                        </div>
+                        <div class="form-group_ficha">
+                            <label for="visitDate">Fecha de visita</label>
+                            <input type="text" class="form-control" id="visitDate" required readonly>
+                        </div>
+                        <div class="form-group_ficha">
+                            <label for="visitTime">Hora de visita</label>
+                            <select id="visitTime" class="form-control" required>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-dark">Enviar Petición</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CONTACTO SECCTION -->
+    <div id="contacto" class="container contact-container">
+        <h5 class="contact-title">Contáctanos</h5>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" value="AmigoFiel Enterprise" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contacto:</label>
+                    <input type="text" id="contact" value="099796141" readonly>
+                    <button class="btn btn-secondary btn-sm btn-copy" onclick="copyText('contact')">Copiar</button>
+                </div>
+                <div class="form-group">
+                    <label for="email">Gmail:</label>
+                    <input type="text" id="email" value="AdoptaTuAmigoFiel@gmail.com" readonly>
+                    <button class="btn btn-secondary btn-sm btn-copy" onclick="copyText('email')">Copiar</button>
+                </div>
+            </div>
+            <div class="map-container">
+                <h6>Encuéntranos aquí:</h6>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.650431023463!2d-74.00594148460773!3d40.71277527933011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a3167a4b751%3A0x4b0b7f5a4a5ff2e6!2sStatue%20of%20Liberty!5e0!3m2!1sen!2sus!4v1617229405764!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="300" 
+                    frameborder="0" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    aria-hidden="false" 
+                    tabindex="0" 
+                    title="Mapa para encontrarnos">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <h1 class="footer-title">Amigo Fiel</h1>
+            <div class="social-icons">
+                <a href="mailto:deleon@fi365.ort.edu.uy" target="_blank">
+                    <img src="../interface/Imagenes/Gmail.png" alt="Gmail">
+                </a>
+                <a href="https://wa.me/+598099796141?text=Holaa quiero adoptarte" target="_blank">
+                    <img src="../interface/Imagenes/WhatsApp.png" alt="WhatsApp">
+                </a>
+                <a href="https://github.com/IngSoft-FIS-2024-1/proyecto-n3aan-n3a-pintos" target="_blank">
+                    <img src="../interface/Imagenes/GitHub.png" alt="GitHub">
+                </a>
+                <a href="www.linkedin.com/in/matias-nicolas-pintos-9a5011290" target="_blank">
+                    <img src="../interface/Imagenes/LinkedIn.jpg" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling for navbar links and buttons
+            $('a[href*="#"]:not([href="#"])').click(function(event) {
+                if (
+                    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+                    && 
+                    location.hostname == this.hostname
+                ) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        event.preventDefault();
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+
+            $('#visitDate').datepicker({
+                dateFormat: 'yy-mm-dd'
+            });
+        });
+
+        function copyText(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('Texto copiado: ' + text);
+        }
+    </script>
+    <script type="text/javascript">
+        window.addEventListener("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("abajo",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>
